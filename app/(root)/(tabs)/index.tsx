@@ -66,7 +66,7 @@ const Home = () => {
         keyExtractor={(item) => item.$id}
         contentContainerClassName="pb-32"
         columnWrapperClassName="flex gap-5 px-5"
-        style={{ paddingBottom: 100, padding: 5 }}
+        style={{ paddingBottom: 100, padding: 5, }}
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={
           loading ? (
@@ -128,6 +128,7 @@ const Home = () => {
                   keyExtractor={(item) => item.$id}
                   horizontal
                   showsHorizontalScrollIndicator={false}
+                 
                   contentContainerClassName="flex gap-5 mt-5"
                 />
               )}

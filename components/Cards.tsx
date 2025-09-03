@@ -13,6 +13,14 @@ export const FeaturedCard = ({ item, onPress }: Props) => {
     <TouchableOpacity
       onPress={onPress}
       className="flex flex-col items-start w-60 h-80 relative"
+      // style={{
+      //   flexDirection: "column",   // flex-col
+      //   alignItems: "flex-start",  // items-start
+      //   width: 240,                // w-60 = 60 * 4px = 240
+      //   height: 320,               // h-80 = 80 * 4px = 320
+      //   position: "relative",      // relative (RN default anyway)
+      // }}
+
     >
       <Image source={{ uri: item.image }} className="size-full rounded-2xl" />
 
@@ -22,7 +30,7 @@ export const FeaturedCard = ({ item, onPress }: Props) => {
       />
 
       <View className="flex flex-row items-center bg-white/90 px-3 py-1.5 rounded-full absolute top-5 right-5">
-        <Image source={icons.star ? 
+        <Image source={icons.star ?
           icons.star : require('@/assets/icons/star.png')
         } className="size-3.5" />
         <Text className="text-xs font-rubik-bold text-primary-300 ml-1">
@@ -59,6 +67,7 @@ export const Card = ({ item, onPress }: Props) => {
   return (
     <TouchableOpacity
       className="flex-1 w-full mt-4 px-3 py-4 rounded-lg bg-white shadow-lg shadow-black-100/70 relative"
+      style={{ minWidth: 150, margin: 10, padding: 10, }}
       onPress={onPress}
     >
       <View className="flex flex-row items-center absolute px-2 top-5 right-5 bg-white/90 p-1 rounded-full z-50">
