@@ -16,7 +16,12 @@
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "package": "com.bereket1.restate"
     },
     "web": {
       "bundler": "metro",
@@ -40,7 +45,7 @@
           "enableFullScreenImage_legacy": true
         }
       ],
-       [
+      [
         "expo-font",
         {
           "fonts": [
@@ -53,9 +58,15 @@
           ]
         }
       ]
-    ] ,   
+    ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c150c547-6f58-4513-ab66-335142b72734"
+      }
     }
   }
 }
