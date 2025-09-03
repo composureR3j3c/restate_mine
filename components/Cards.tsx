@@ -3,12 +3,19 @@ import images from "@/constants/images";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Models } from "react-native-appwrite";
 
+interface Place extends Models.Document {
+  image: string;
+  name: string;
+  address: string;
+  price: number;
+  rating: number;
+}
 interface Props {
-  item: Models.Document;
+  item: Models.Document ;
   onPress?: () => void;
 }
 
-export const FeaturedCard = ({ item, onPress }: Props) => {
+export const FeaturedCard = ({ item , onPress }: Props) => {
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -71,7 +78,7 @@ export const Card = ({ item, onPress }: Props) => {
       onPress={onPress}
     >
       <View className="flex flex-row items-center absolute px-2 top-5 right-5 bg-white/90 p-1 rounded-full z-50">
-        <Image source={icons.star} className="size-2.5" />
+        <Image source={icons.star as any} className="size-2.5" />
         <Text className="text-xs font-rubik-bold text-primary-300 ml-0.5">
           {item.rating}
         </Text>
@@ -92,7 +99,7 @@ export const Card = ({ item, onPress }: Props) => {
             ${item.price}
           </Text>
           <Image
-            source={icons.heart}
+            source={icons.heart as any}
             className="w-5 h-5 mr-2"
             tintColor="#191D31"
           />
